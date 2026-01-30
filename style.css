@@ -1,0 +1,163 @@
+:root {
+    --primary-color: #4a90e2;
+    --primary-hover: #357abd;
+    --secondary-color: #f5f5f5;
+    --text-color: #333;
+    --bg-color: #f0f2f5;
+    --white: #ffffff;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.app-container {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 600px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 30px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#question-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: var(--text-color);
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.option-group {
+    display: flex;
+    align-items: center;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.option-group:hover {
+    background-color: #f9f9f9;
+    border-color: var(--primary-color);
+}
+
+.option-group input[type="radio"] {
+    margin-right: 10px;
+    accent-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.option-group label {
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Selected state styling handled via JS toggle usually, but simple :checked works too if we had sibling selectors nicely set up. 
+   We will rely on simple radio behavior + hover effects for now. 
+*/
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn.primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn.secondary {
+    background-color: #e0e0e0;
+    color: #555;
+}
+
+.btn.secondary:hover {
+    background-color: #d0d0d0;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Result Section */
+#result-container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.score-card {
+    background-color: #e8f4fd;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+}
+
+#final-score {
+    font-size: 48px;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
