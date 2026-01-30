@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCET Learning - Quiz Application</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>KCET Learning</h1>
+            <p>Interactive Quiz</p>
+        </header>
+
+        <div id="quiz-container">
+            <div class="question-header">
+                <span id="question-number">Question 1 of 10</span>
+                <span id="timer"></span>
+            </div>
+            
+            <h2 id="question-text">Loading question...</h2>
+            
+            <div id="options-container">
+                <!-- Options will be loaded here dynamically -->
+            </div>
+
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="btn secondary" disabled>Previous</button>
+                <button id="next-btn" class="btn primary">Next</button>
+            </div>
+        </div>
+
+        <div id="result-container" style="display: none;">
+            <h2>Quiz Completed!</h2>
+            <div class="score-card">
+                <p>Your Score</p>
+                <h1 id="final-score">0 / 20</h1>
+                <p id="correct-count">0 Correct Answers</p>
+            </div>
+            <button id="restart-btn" class="btn primary">Restart Quiz</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
